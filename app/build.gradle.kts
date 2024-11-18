@@ -41,14 +41,12 @@ android {
     project.afterEvaluate {
         publishing {
             publications {
-                register<MavenPublication>("release") {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+
                     groupId = "com.github.vinvijdev"
                     artifactId = "SQA"
                     version = "1.0.0"
-
-//                    afterEvaluate {
-//                        from(components["release"])
-//                    }
                 }
             }
         }
@@ -89,7 +87,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
-    implementation ("com.google.android.gms:play-services-location:21.3.0")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.4.0")
