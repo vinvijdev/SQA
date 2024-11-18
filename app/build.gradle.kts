@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
 }
@@ -38,13 +38,29 @@ android {
         jvmTarget = "1.8"
     }
 
+    project.afterEvaluate {
+        publishing {
+            publications {
+                register<MavenPublication>("release") {
+                    groupId = "com.github.vinvijdev"
+                    artifactId = "SQA"
+                    version = "1.0.0"
+
+//                    afterEvaluate {
+//                        from(components["release"])
+//                    }
+                }
+            }
+        }
+    }
+
 //    project.afterEvaluate {
 //        publishing {
 //            publications {
-//                create<MavenPublication>("myLibrary") {
+//                create<MavenPublication>("release") {
 //                    artifact(tasks["bundleReleaseAar"])
 //                    artifactId = "smartqueryassistant"
-//                    groupId = "com.adiuxm.genaimdk"
+//                    groupId = "com.adiuxm.genaisqa"
 //                    version = "1.0"
 //                    task("PublishToMavenLocal")
 //
