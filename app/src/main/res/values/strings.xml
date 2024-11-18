@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name_main">Smart Query Assistant</string>
+    <string name="disclaimer_text">Smart Query Assistant is powered by generative AI and all output should be reviewed before use. Please do not enter any sensitive personal data, and avoid entering any other personal data you do not wish to be processed.</string>
+    <string name="welcome_text_one">I am your Smart Query Assistant, your assistant for project-related documentation.</string>
+    <string name="welcome_text_second">How may I help?</string>
+    <string name="hello_user">Hello User</string>
+    <string name="query_hint"><i>Ask your question?</i></string>
+    <string name="preference_file_key">shared_pref_file_key</string>
+    <string name="no_internet_toast_message">Please check your internet connection!</string>
+</resources>

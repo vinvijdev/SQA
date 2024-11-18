@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dots="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/welcome_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/welcome_user_tv"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:fontFamily="@font/brand_medium"-->
+        <!--            android:padding="2dp"-->
+        <!--            android:text="@string/hello_user"-->
+        <!--            android:textSize="10sp" />-->
+
+        <TextView
+            android:id="@+id/welcome_message_tv_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/brand_black"
+            android:padding="2dp"
+            android:text="@string/welcome_text_one"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/welcome_message_tv_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brand_medium"
+            android:padding="2dp"
+            android:text="@string/welcome_text_second"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/dots"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/chat_item_user" />
+
+    <pl.tajchert.waitingdots.DotsTextView
+        android:id="@+id/dots"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/ll"
+        app:layout_constraintStart_toStartOf="parent"
+        dots:autoplay="true"
+        dots:period="1000" />
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/ll"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="@drawable/chat_rounded_bg"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="1"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/disclaimer_tv">-->
+
+<!--        <EditText-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_weight="0.8"-->
+<!--            android:hint="Message"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textColorHint="@color/black" />-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="0.2"-->
+<!--            android:src="@drawable/send_icon" />-->
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/disclaimer_tv">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/attach_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/pointer_crosshair" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/chat_rounded_bg"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/query"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:background="@null"
+                android:fontFamily="@font/brand_medium"
+                android:hint="@string/query_hint"
+                android:imeOptions="actionSend"
+                android:inputType="text"
+                android:padding="20dp"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/send"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:padding="15dp"
+                android:src="@drawable/send_icon_state_selector" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/disclaimer_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/brand_medium"
+        android:padding="4dp"
+        android:text="@string/disclaimer_text"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
