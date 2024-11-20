@@ -58,9 +58,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 
-class MainFragment : Fragment() {
+class SQAMainFragment : Fragment() {
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = SQAMainFragment()
     }
 
     private val viewModel: MainViewModel by viewModels()
