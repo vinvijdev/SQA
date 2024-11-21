@@ -1,16 +1,20 @@
 package com.adiuxm.genaisqa.app.adapter
 
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.adiuxm.genaisqa.app.Constants
+import com.adiuxm.genaisqa.app.ui.ChatImageDetailedView
 import com.adiuxm.genaisqa.data.remote.DataConstants
 import com.adiuxm.genaisqa.data.remote.RecyclerViewDataModel
 import com.adiuxm.genaisqa.databinding.ChatItemJouleBinding
 import com.adiuxm.genaisqa.databinding.ChatItemUserBinding
+import com.bumptech.glide.Glide
+
 
 class ChatAdapter(var ctx: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -65,9 +69,13 @@ class ChatAdapter(var ctx: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
                 } else if (data[position].chatType == Constants.CHAT_TYPE_IMAGE) {
                     viewHolderUser.tvChatMainUser.visibility = View.GONE
                     viewHolderUser.tvChatMainUserImage.visibility = View.VISIBLE
-                    viewHolderUser.tvChatMainUserImage.setImageBitmap(
-                        BitmapFactory.decodeFile(data[position].file?.absolutePath)
-                    )
+                    Glide
+                        .with(ctx)
+                        .load(data[position].file?.absolutePath)
+                        .into(viewHolderUser.tvChatMainUserImage);
+                    viewHolderUser.itemView.setOnClickListener {
+                        showImageDialogFragment(data[position].file?.absolutePath)
+                    }
                 }
             }
 
@@ -76,6 +84,12 @@ class ChatAdapter(var ctx: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
                 viewHolderJoule.tvChatJoule.text = data[position].message
             }
         }
+    }
+
+    private fun showImageDialogFragment(url: String?) {
+        // Create and show the dialog.
+        val newFragment: DialogFragment = ChatImageDetailedView().newInstance(url!!)
+        newFragment.show((ctx as AppCompatActivity).supportFragmentManager, "dialog")
     }
 
     inner class ViewHolderUser(binding: ChatItemUserBinding) :

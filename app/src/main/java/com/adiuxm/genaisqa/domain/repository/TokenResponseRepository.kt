@@ -1,5 +1,6 @@
 package com.adiuxm.genaisqa.domain.repository
 
+import com.adiuxm.genaisqa.app.Constants
 import com.adiuxm.genaisqa.app.DataManager
 import com.adiuxm.genaisqa.data.remote.Resource
 import com.adiuxm.genaisqa.data.remote.RestAPI

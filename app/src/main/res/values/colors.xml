@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="app_primary_color">#48AAAD</color>
+    <color name="chat_bubble_mine_color">#9dced0</color>
+    <color name="chat_bubble_their_color">#e9e9e9</color>
+    <color name="chat_rv_bg_color">#ffffff</color>
+    <color name="send_icon_enabled">#5eb2b5</color>
+    <color name="send_icon_disabled">#A9B4BE</color>
+    <color name="app_secondary_color">#a8d4d5</color>
+    <color name="bottomsheet_option_text_color">#1f5355</color>
 </resources>

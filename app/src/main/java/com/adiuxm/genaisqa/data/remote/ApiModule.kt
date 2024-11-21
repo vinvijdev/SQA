@@ -1,6 +1,5 @@
 package com.adiuxm.genaisqa.data.remote
 
-import android.content.Context
 import com.adiuxm.genaisqa.app.DataManager
 import com.adiuxm.genaisqa.domain.repository.ImageUploadResponseRepository
 import com.adiuxm.genaisqa.domain.repository.QueryResponseRepository
@@ -22,9 +21,9 @@ object ApiModule {
             .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
 
-    private fun provideOkHttpClient(): OkHttpClient {
-        return OkHttpClient.Builder().addInterceptor(
-            provideLoggingInterceptor()
+    private val provideOkHttpClient: OkHttpClient by lazy {
+        OkHttpClient.Builder().addInterceptor(
+            provideLoggingInterceptor
         ).addInterceptor(AuthInterceptor)
             .connectTimeout(2, TimeUnit.MINUTES)
             .readTimeout(60, TimeUnit.SECONDS)
@@ -33,34 +32,29 @@ object ApiModule {
             .build()
     }
 
-    private fun provideLoggingInterceptor(): HttpLoggingInterceptor {
+    private val provideLoggingInterceptor: HttpLoggingInterceptor by lazy {
         val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
-        return logging
+        logging
     }
 
-    fun providesApiRetrofit(): Retrofit {
-        return Retrofit.Builder()
+    private val providesApiRetrofit: Retrofit by lazy {
+        Retrofit.Builder()
             .baseUrl(DataManager.baseUrl)
-            .client(provideOkHttpClient()).addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .client(provideOkHttpClient).addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(providesGson())).build()
     }
 
-    private fun providesQueryResponseService(ctx: Context): RestAPI =
-        providesApiRetrofit().create(RestAPI::class.java)
+    private val restAPI: RestAPI by lazy {
+        providesApiRetrofit.create(RestAPI::class.java)
+    }
 
-    fun providesQueryResponseRepository(ctx: Context): QueryResponseRepository =
-        QueryResponseRepository(providesQueryResponseService(ctx))
+    fun providesQueryResponseRepository(): QueryResponseRepository =
+        QueryResponseRepository(restAPI)
 
-    private fun providesTokenResponseService(ctx: Context): RestAPI =
-        providesApiRetrofit().create(RestAPI::class.java)
+    fun providesTokenResponseRepository(): TokenResponseRepository =
+        TokenResponseRepository(restAPI)
 
-    fun providesTokenResponseRepository(ctx: Context): TokenResponseRepository =
-        TokenResponseRepository(providesTokenResponseService(ctx))
-
-    private fun providesImageUploadResponseService(ctx: Context): RestAPI =
-        providesApiRetrofit().create(RestAPI::class.java)
-
-    fun providesImageUploadResponseRepository(ctx: Context): ImageUploadResponseRepository =
-        ImageUploadResponseRepository(providesImageUploadResponseService(ctx))
+    fun providesImageUploadResponseRepository(): ImageUploadResponseRepository =
+        ImageUploadResponseRepository(restAPI)
 }

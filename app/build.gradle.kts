@@ -9,7 +9,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-//        applicationId = "com.adiuxm.genaimdk"
+//        applicationId = "com.adiuxm.genaisqa"
         minSdk = 24
         targetSdk = 33
 
@@ -46,7 +46,7 @@ android {
 
                     groupId = "com.github.vinvijdev"
                     artifactId = "SQA"
-                    version = "1.0.0"
+                    version = "1.0.4"
                 }
             }
         }
@@ -104,6 +104,9 @@ dependencies {
 
     // dots
     implementation("com.github.tajchert:WaitingDots:0.6.1")
+
+    // image lib
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")

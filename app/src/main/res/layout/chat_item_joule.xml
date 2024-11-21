@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_joule"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:padding="@dimen/chat_bubble_top_bottom_outer_padding">
 
     <TextView
         android:id="@+id/tv_chat_joule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/light_rounded_bg"
-        android:fontFamily="@font/brand_medium"
-        android:padding="10dp"
-        android:text="ebveiuvbeibveivbeiiebvievbeivbiebvebveicwc"
+        android:background="@drawable/incoming_chat_bubble"
+        android:paddingLeft="16dp"
+        android:paddingTop="@dimen/chat_bubble_top_bottom_padding"
+        android:paddingRight="10dp"
+        android:paddingBottom="@dimen/chat_bubble_top_bottom_padding"
         android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textSize="14sp"
+        tools:text="j" />
 
 
 </RelativeLayout>

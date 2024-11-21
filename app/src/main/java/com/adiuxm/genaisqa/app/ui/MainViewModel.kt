@@ -9,7 +9,7 @@ import com.adiuxm.genaisqa.data.remote.Resource
 import com.adiuxm.genaisqa.domain.repository.ImageUploadResponseRepository
 import com.adiuxm.genaisqa.domain.repository.QueryResponseRepository
 import com.adiuxm.genaisqa.domain.repository.TokenResponseRepository
-//import com.adiuxm.genaimdk.domain.repository.TokenResponseRepository
+//import com.adiuxm.genaisqa.domain.repository.TokenResponseRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -35,17 +35,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val queryResponseRepository: QueryResponseRepository
         get() {
-            return ApiModule.providesQueryResponseRepository(getApplication<Application>().applicationContext)
+            return ApiModule.providesQueryResponseRepository()
         }
 
     private val tokenResponseRepository: TokenResponseRepository
         get() {
-            return ApiModule.providesTokenResponseRepository(getApplication<Application>().applicationContext)
+            return ApiModule.providesTokenResponseRepository()
         }
 
     private val imageUploadResponseRepository: ImageUploadResponseRepository
         get() {
-            return ApiModule.providesImageUploadResponseRepository(getApplication<Application>().applicationContext)
+            return ApiModule.providesImageUploadResponseRepository()
         }
 
 

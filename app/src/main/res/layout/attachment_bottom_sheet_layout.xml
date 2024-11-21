@@ -19,14 +19,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="false"
+            android:duplicateParentState="true"
+            android:focusable="false"
             android:src="@drawable/camera_icon_state_selector" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
             android:fontFamily="@font/brand_black"
             android:padding="2dp"
             android:text="Camera"
+            android:textColor="@color/bottomsheet_option_text_color"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -45,14 +51,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="false"
+            android:duplicateParentState="true"
+            android:focusable="false"
             android:src="@drawable/gallery_icon_state_selector" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
             android:fontFamily="@font/brand_black"
             android:padding="2dp"
             android:text="Gallery"
+            android:textColor="@color/bottomsheet_option_text_color"
             android:textSize="14sp" />
     </LinearLayout>
 

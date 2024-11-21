@@ -3,14 +3,14 @@
     android:height="16dp"
     android:viewportWidth="16"
     android:viewportHeight="16">
-  <path
-      android:pathData="M0,0h16v16h-16z"
-      android:strokeAlpha="0"
-      android:strokeWidth="0"
-      android:fillColor="#A9B4BE"
-      android:fillAlpha="0"/>
-  <path
-      android:pathData="M9.35,15c-0.33,0 -0.62,-0.2 -0.74,-0.5l-2.03,-5.11L1.5,7.35c-0.3,-0.12 -0.5,-0.42 -0.5,-0.75 0,-0.33 0.2,-0.62 0.51,-0.74L13.89,1.06c0.07,-0.03 0.14,-0.05 0.21,-0.06 0.05,0 0.1,0 0.15,0 0.19,0.01 0.37,0.09 0.51,0.23 0.14,0.14 0.22,0.32 0.23,0.51 0,0.05 0,0.11 0,0.16 0,0.07 -0.03,0.14 -0.05,0.2l-4.85,12.38c-0.12,0.31 -0.41,0.5 -0.74,0.51ZM8.13,8.97l1.21,3.05 2.73,-6.97 -3.94,3.92ZM3.98,6.62l3.02,1.22 3.93,-3.91 -6.95,2.69Z"
-      android:strokeWidth="0"
-      android:fillColor="#A9B4BE"/>
+    <path
+        android:fillAlpha="0"
+        android:fillColor="@color/send_icon_disabled"
+        android:pathData="M0,0h16v16h-16z"
+        android:strokeWidth="0"
+        android:strokeAlpha="0" />
+    <path
+        android:fillColor="@color/send_icon_disabled"
+        android:pathData="M9.35,15c-0.33,0 -0.62,-0.2 -0.74,-0.5l-2.03,-5.11L1.5,7.35c-0.3,-0.12 -0.5,-0.42 -0.5,-0.75 0,-0.33 0.2,-0.62 0.51,-0.74L13.89,1.06c0.07,-0.03 0.14,-0.05 0.21,-0.06 0.05,0 0.1,0 0.15,0 0.19,0.01 0.37,0.09 0.51,0.23 0.14,0.14 0.22,0.32 0.23,0.51 0,0.05 0,0.11 0,0.16 0,0.07 -0.03,0.14 -0.05,0.2l-4.85,12.38c-0.12,0.31 -0.41,0.5 -0.74,0.51ZM8.13,8.97l1.21,3.05 2.73,-6.97 -3.94,3.92ZM3.98,6.62l3.02,1.22 3.93,-3.91 -6.95,2.69Z"
+        android:strokeWidth="0" />
 </vector>

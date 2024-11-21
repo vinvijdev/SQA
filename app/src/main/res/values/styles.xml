@@ -3,4 +3,12 @@
     <style name="RoundedSquare">
         <item name="cornerSize">10%</item>
     </style>
+    <style name="ImageCornerRadius" parent="@style/ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">@dimen/chat_bubble_corner_radius</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/app_primary_color</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
 </resources>

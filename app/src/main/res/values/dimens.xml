@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="chat_bubble_top_bottom_padding">6sp</dimen>
+    <dimen name="chat_bubble_top_bottom_outer_padding">15dp</dimen>
+    <dimen name="chat_bubble_corner_radius">5dp</dimen>
+</resources>

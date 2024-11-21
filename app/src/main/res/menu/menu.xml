@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/speak"
-        android:icon="@android:drawable/ic_btn_speak_now"
+        android:icon="@drawable/speak"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"
         android:title="Speak" />

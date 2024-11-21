@@ -7,7 +7,7 @@ import android.speech.SpeechRecognizer.createSpeechRecognizer
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import com.adiuxm.genaisqa.R
-import com.adiuxm.genaisqa.app.ui.SQAMainFragment
+import com.adiuxm.genaisqa.app.ui.MainFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.fl, SQAMainFragment.newInstance())
+            supportFragmentManager.beginTransaction().replace(R.id.fl, MainFragment.newInstance())
                 .commitNow()
         }
 

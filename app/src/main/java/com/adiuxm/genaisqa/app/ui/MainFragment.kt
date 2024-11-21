@@ -38,7 +38,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.adiuxm.genaisqa.R
 import com.adiuxm.genaisqa.app.Constants
 import com.adiuxm.genaisqa.app.adapter.ChatAdapter
 import com.adiuxm.genaisqa.app.utils.FileUtils
@@ -58,9 +57,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 
-class SQAMainFragment : Fragment() {
+class MainFragment : Fragment() {
     companion object {
-        fun newInstance() = SQAMainFragment()
+        fun newInstance() = MainFragment()
     }
 
     private val viewModel: MainViewModel by viewModels()
@@ -71,7 +70,7 @@ class SQAMainFragment : Fragment() {
     private lateinit var ll: LinearLayout
     private lateinit var rv: RecyclerView
     private lateinit var send: AppCompatImageView
-    private lateinit var attach: AppCompatImageButton
+    private lateinit var attach: AppCompatImageView
     private lateinit var selectedImageFile: File
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
@@ -87,7 +86,7 @@ class SQAMainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(com.adiuxm.genaisqa.R.layout.fragment_main, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -98,10 +97,10 @@ class SQAMainFragment : Fragment() {
     }
 
     private fun initViews(view: View) {
-        et = view.findViewById(R.id.query)
-        ll = view.findViewById(R.id.welcome_ll)
-        rv = view.findViewById(R.id.rv)
-        send = view.findViewById(R.id.send)
+        et = view.findViewById(com.adiuxm.genaisqa.R.id.query)
+        ll = view.findViewById(com.adiuxm.genaisqa.R.id.welcome_ll)
+        rv = view.findViewById(com.adiuxm.genaisqa.R.id.rv)
+        send = view.findViewById(com.adiuxm.genaisqa.R.id.send)
 
         et.addTextChangedListener(textWatcher)
         et.setOnEditorActionListener(imeActionWatcher)
@@ -111,11 +110,11 @@ class SQAMainFragment : Fragment() {
             sendMessage(et.text.toString(), it, Constants.CHAT_TYPE_TEXT)
         }
 
-        dotView = view.findViewById(R.id.dots)
+        dotView = view.findViewById(com.adiuxm.genaisqa.R.id.dots)
         dotView.bringToFront()
         dotView.visibility = View.GONE
 
-        attach = view.findViewById(R.id.attach_btn)
+        attach = view.findViewById(com.adiuxm.genaisqa.R.id.attach_btn)
         attach.setOnClickListener {
             attachFile()
         }
@@ -127,16 +126,16 @@ class SQAMainFragment : Fragment() {
 
     private fun showBottomSheetDialog() {
         val bottomSheetDialog = BottomSheetDialog(requireContext())
-        bottomSheetDialog.setContentView(R.layout.attachment_bottom_sheet_layout)
+        bottomSheetDialog.setContentView(com.adiuxm.genaisqa.R.layout.attachment_bottom_sheet_layout)
         val camera =
-            bottomSheetDialog.findViewById<LinearLayout>(R.id.bs_camera_button)
+            bottomSheetDialog.findViewById<LinearLayout>(com.adiuxm.genaisqa.R.id.bs_camera_button)
         camera?.setOnClickListener {
 //            launchCamera()
             dispatchTakePictureIntent()
             bottomSheetDialog.dismiss()
         }
         val gallery =
-            bottomSheetDialog.findViewById<LinearLayout>(R.id.bs_gallery_button)
+            bottomSheetDialog.findViewById<LinearLayout>(com.adiuxm.genaisqa.R.id.bs_gallery_button)
         gallery?.setOnClickListener {
             launchGallery()
             bottomSheetDialog.dismiss()
@@ -150,7 +149,7 @@ class SQAMainFragment : Fragment() {
         try {
             selectedImageFile = createNewImageFile(requireContext())
             val uri = FileProvider.getUriForFile(
-                requireContext(), "com.adiuxm.genaisqa.file.provider", selectedImageFile
+                requireContext(), "com.adiuxm.genaisqa.file.provider.one", selectedImageFile
             )
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
             startActivityForResult(takePictureIntent, 100)
@@ -301,7 +300,7 @@ class SQAMainFragment : Fragment() {
         } else {
             Toast.makeText(
                 requireContext(),
-                getString(R.string.no_internet_toast_message),
+                getString(com.adiuxm.genaisqa.R.string.no_internet_toast_message),
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -315,7 +314,7 @@ class SQAMainFragment : Fragment() {
     }
 
     private fun setAdapter(view: View) {
-        recyclerView = view.findViewById<RecyclerView>(R.id.rv)
+        recyclerView = view.findViewById<RecyclerView>(com.adiuxm.genaisqa.R.id.rv)
         var layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         layoutManager.stackFromEnd = true
@@ -389,7 +388,7 @@ class SQAMainFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        val item = menu.findItem(R.id.speak)
+        val item = menu.findItem(com.adiuxm.genaisqa.R.id.speak)
         item.setOnMenuItemClickListener {
             val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
             intent.putExtra(
