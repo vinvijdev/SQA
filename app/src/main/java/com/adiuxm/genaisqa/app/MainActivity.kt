@@ -18,11 +18,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.fl_main, MainFragment.newInstance())
-                .commitNow()
-        }
-
         setToolbar()
 
 //        val i = intent
@@ -36,6 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         createSpeechRecognizer(this)
 
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction().replace(R.id.fl_main, MainFragment.newInstance())
+                .commitNow()
+        }
     }
 
     private fun saveData(i: Intent) {
