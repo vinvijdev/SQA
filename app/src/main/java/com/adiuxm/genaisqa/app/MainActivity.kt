@@ -80,12 +80,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (checkIfEmpty(DataManager.clientId) || checkIfEmpty(DataManager.clientSecret) || checkIfEmpty(
-                DataManager.tokenUrl
-            ) || checkIfEmpty(DataManager.baseUrl) || checkIfEmpty(DataManager.credentialType)
-        ) {
-            goBack()
-        }
+//        if (checkIfEmpty(DataManager.clientId) || checkIfEmpty(DataManager.clientSecret) || checkIfEmpty(
+//                DataManager.tokenUrl
+//            ) || checkIfEmpty(DataManager.baseUrl) || checkIfEmpty(DataManager.credentialType)
+//        ) {
+//            goBack()
+//        }
     }
 
     private fun checkIfEmpty(key: String): Boolean {
