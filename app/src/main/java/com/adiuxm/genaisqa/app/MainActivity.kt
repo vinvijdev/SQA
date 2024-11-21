@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         createSpeechRecognizer(this)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.fl_main, MainFragment.newInstance())
-                .commitNow()
-        }
+//        if (savedInstanceState == null) {
+//            supportFragmentManager.beginTransaction().replace(R.id.fl_main, MainFragment.newInstance())
+//                .commitNow()
+//        }
     }
 
     private fun saveData(i: Intent) {
