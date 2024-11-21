@@ -18,7 +18,7 @@
 
     <fragment
         android:name="com.adiuxm.genaisqa.app.ui.MainFragment"
-        android:id="@+id/fl"
+        android:id="@+id/fl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
