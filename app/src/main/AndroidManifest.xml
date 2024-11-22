@@ -19,7 +19,7 @@
         tools:replace="android:label">
 
         <activity
-            android:name="com.adiuxm.genaisqa.app.MainActivity"
+            android:name="com.adiuxm.genaisqa.app.SQAMainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

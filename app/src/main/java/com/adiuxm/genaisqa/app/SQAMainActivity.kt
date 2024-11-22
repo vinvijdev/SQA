@@ -7,10 +7,9 @@ import android.speech.SpeechRecognizer.createSpeechRecognizer
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import com.adiuxm.genaisqa.R
-import com.adiuxm.genaisqa.app.ui.MainFragment
 
 
-class MainActivity : AppCompatActivity() {
+class SQAMainActivity : AppCompatActivity() {
 
     private var mSpeechRecognizer: SpeechRecognizer? = null
     private var mIsListening = false
