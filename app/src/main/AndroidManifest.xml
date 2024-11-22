@@ -22,10 +22,10 @@
             android:name="com.adiuxm.genaisqa.app.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <intent-filter>
+                <action android:name="com.adiuxm.genaisqa.app.MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <provider
