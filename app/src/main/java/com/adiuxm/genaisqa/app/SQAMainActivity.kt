@@ -61,10 +61,10 @@ class SQAMainActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.app_name_main)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        goBack()
-        return true
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        goBack()
+//        return true
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // Inflate the menu
@@ -74,7 +74,7 @@ class SQAMainActivity : AppCompatActivity() {
     }
 
     private fun goBack() {
-        onBackPressedDispatcher.onBackPressed()
+//        onBackPressedDispatcher.onBackPressed()
     }
 
     override fun onResume() {
