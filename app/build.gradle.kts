@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.adiuxm.genaisqa"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
 //        applicationId = "com.adiuxm.genaisqa"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 35
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,7 +46,7 @@ android {
 
                     groupId = "com.github.vinvijdev"
                     artifactId = "SQA"
-                    version = "1.0.24"
+                    version = "1.0.25"
                 }
             }
         }
