@@ -45,7 +45,7 @@ android {
 
                     groupId = "com.github.vinvijdev"
                     artifactId = "SQA"
-                    version = "1.0.31"
+                    version = "1.0.32"
                 }
             }
         }
