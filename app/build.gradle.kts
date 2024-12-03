@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.adiuxm.genaisqa"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
 //        applicationId = "com.adiuxm.genaisqa"
@@ -45,7 +45,7 @@ android {
 
                     groupId = "com.github.vinvijdev"
                     artifactId = "SQA"
-                    version = "1.0.26"
+                    version = "1.0.27"
                 }
             }
         }
